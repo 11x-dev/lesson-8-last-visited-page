@@ -29,7 +29,7 @@ export function LearnToPlay(): JSX.Element {
     const navigate = useNavigate();
 
     function back() {
-        navigate("/");
+        void navigate("/");
     }
 
     return (
@@ -145,9 +145,9 @@ export function ChapterButton({ chapter }: { chapter: number }): JSX.Element {
                 if (chapter > 8) {
                     return;
                 } else if (chapter === 8) {
-                    navigate(`/learn-to-play/8/problems/capturing/1`);
+                    void navigate(`/learn-to-play/8/problems/capturing/1`);
                 } else {
-                    navigate(`/learn-to-play/${chapter}`);
+                    void navigate(`/learn-to-play/${chapter}`);
                 }
             }}
         >

@@ -286,11 +286,11 @@ export function KidsGame(): JSX.Element {
             })
                 .then(() => {
                     goban_ref.current.resign();
-                    navigate("/play");
+                    void navigate("/play");
                 })
                 .catch(() => 0);
         } else {
-            navigate("/play");
+            void navigate("/play");
         }
     }
 
@@ -307,7 +307,7 @@ export function KidsGame(): JSX.Element {
                 })
                 .catch(() => 0);
         } else {
-            navigate("/play");
+            void navigate("/play");
         }
     }
 
@@ -402,7 +402,7 @@ export function KidsGame(): JSX.Element {
                     <ResultsDialog
                         goban={goban_ref?.current}
                         onPlayAgain={() => {
-                            navigate("/play");
+                            void navigate("/play");
                         }}
                         onClose={() => {
                             setGameFinishedClosed(true);

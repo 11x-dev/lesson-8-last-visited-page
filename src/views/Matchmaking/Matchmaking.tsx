@@ -59,7 +59,7 @@ export function Matchmaking(): JSX.Element {
     React.useEffect(() => {
         const t = setTimeout(
             () => {
-                navigate("/");
+                void navigate("/");
             },
             60 * 60 * 1000,
         );
@@ -241,13 +241,13 @@ export function Matchmaking(): JSX.Element {
     };
     const playOrView = (e) => {
         if (game_to_view) {
-            navigate(`/game/${game_to_view.id}`);
+            void navigate(`/game/${game_to_view.id}`);
         } else {
             play(e);
         }
     };
     function back() {
-        navigate("/");
+        void navigate("/");
     }
     const setOpponentAndHandicap = (o: string, h: number, opponent_obj: any) => {
         setOpponent(o);
@@ -445,7 +445,7 @@ function CheckForChallengeReceived(): JSX.Element {
             } else if (notification.type === "gameEnded") {
                 notification_manager.deleteNotification(notification);
             } else if (notification.type === "gameStarted") {
-                navigate(`/game/${notification.game_id}`);
+                void navigate(`/game/${notification.game_id}`);
                 notification_manager.deleteNotification(notification);
             } else if (notification.type === "delete") {
                 console.log("delete notification:", notification, active_challenge);
@@ -470,7 +470,7 @@ function CheckForChallengeReceived(): JSX.Element {
         post(`me/challenges/${active_challenge.current.challenge_id}/accept`, {})
             .then(() => {
                 if (active_challenge.current) {
-                    navigate(`/game/${active_challenge.current.game_id}`);
+                    void navigate(`/game/${active_challenge.current.game_id}`);
                 }
             })
             .catch((err) => {

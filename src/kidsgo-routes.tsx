@@ -52,7 +52,7 @@ function Main(props): JSX.Element {
                 return;
             }
 
-            navigate(`/game/${game.id}`);
+            void navigate(`/game/${game.id}`);
 
             console.log("Need to go to game", game.id);
         });
