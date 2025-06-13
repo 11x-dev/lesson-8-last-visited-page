@@ -1,0 +1,39 @@
+.ReportsCenterCMInfo {
+    width: 100%;
+    margin-left: 2rem;
+
+    .aggregate-vote-activity-graph {
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+
+        .percent-graph, .totals-graph {
+            height: 50%;
+        }
+    }
+
+    .individual-overview {
+        .aggregate-vote-activity-graph {
+            height: 200px;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .cm-name a {
+            max-width: 10rem;
+            overflow: hidden;
+        }
+    }
+
+    // We use `disable` for tabs they don't have permission for:
+    // we want them to disappear.
+    .react-tabs__tab--disabled {
+        display: none;
+    }
+
+    .vote-activity-graph {
+        height: 200px;
+    }
+}

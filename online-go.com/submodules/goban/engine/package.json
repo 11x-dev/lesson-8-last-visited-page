@@ -1,0 +1,32 @@
+{
+    "name": "goban-engine",
+    "version": "dev",
+    "description": "",
+    "main": "build/goban-engine.js",
+    "types": "build/engine/index.d.ts",
+    "files": [
+        "build/"
+    ],
+    "keywords": [
+        "go",
+        "baduk",
+        "igo",
+        "weiqi",
+        "online-go",
+        "ogs",
+        "goban"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/online-go/goban.git"
+    },
+    "author": "Akita Noek  <anoek@online-go.com> (https://online-go.com/)",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/online-go/goban/issues"
+    },
+    "homepage": "https://github.com/online-go/goban#readme",
+    "dependencies": {
+        "eventemitter3": "^5.0.0"
+    }
+}
