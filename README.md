@@ -63,3 +63,4 @@ then hits the back arrow in the top left to go to the "/learn-to-play" page, and
 
 This was a real enhancement request from a real production codebase!  Feel free to use any resources you want on this coding challenge, have fun!  
 
+![lesson 8 navigation screenshot from learn to play page](https://res.cloudinary.com/dxq77puhi/image/upload/v1749876458/learn_to_play_page_excalidraw_annotation_for_lesson_8_navigation_enhancement_6_13_2025_q19grj.png)
