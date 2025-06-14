@@ -54,5 +54,11 @@ For lesson 8 only, we need to make sure the user is navigated to the last page t
 
 1. If a user changes pages within lesson 8, then navigates out of lesson 8, then navigates back to lesson 8, they return to the last page they were on.
 
+For example, if the user is originally on this page: /learn-to-play/8/problems/capturing/1
+
+then navigates to this page by clicking endgame from the left navigation: /learn-to-play/8/problems/endgame/1
+
+then hits the back arrow in the top left, and clicks to go back to lesson 8, they will be shown this page: /learn-to-play/8/problems/endgame/1
+
 This was a real enhancement request from a real production codebase!  Feel free to use any resources you want on this coding challenge, have fun!  
 
