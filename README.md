@@ -1,78 +1,52 @@
 *******************
-***Initial Setup***
+***Solution***
 *******************
 
-Getting setup locally only takes a few minutes!
+You can view the exact code changes needed to solve this coding challenge here: https://github.com/ScriabinOp8No12/avatar-name-enhancement-11xdev/pull/1/files#diff-b2d4e7413aed9dc28d0b0bff2da03c27287e6a913f633d142273f17379227410
 
-1. Clone the repo
+This branch contains the lesson 8 last visited page enhancement - you can test that the functionality works as intended in your browser.   
 
-```
-git clone https://github.com/ScriabinOp8No12/lesson-8-last-visited-page-11xdev.git
-```
+1. We'll want to use local storage for storing the last visited lesson 8 page the user was on.  We can use React's useEffect with useLocation to track changes in the url.  We shouldn't be too concerned with the amount of times the useEffect fires, as it only triggers when the url changes.
 
-2. Navigate to the root of the project:
+We'll want to add code in the file:
 
 ```
-cd lesson-8-last-visited-page-11xdev
+src/views/Lessons/Puzzles.tsx
 ```
 
-3. Install packages and start the frontend server:
+The code addition should look something like this:
+
+import { useLocation } from "react-router-dom";
+
+Inside the component:
+
+const location = useLocation();
 
 ```
-yarn install && npm run dev
+useEffect(() => {
+    if (location.pathname.startsWith("/learn-to-play/8/problems/")) {
+        localStorage.setItem("last-visited-lesson-8-page", location.pathname);
+    }
+}, [location.pathname]);
 ```
 
-4. View the website in your browser
+2. Next, we need to ensure that when we are on the "/learn-to-play" page, and clicking the 8 or problems below the 8 navigates us to the page specified in local storage (if it exists).  Don't forget that you'll need to add logic to both navigateToChapter and ChapterButton.  We can check local storage for the key we stored in the above Puzzles.tsx file, then navigate there if it exists.
+
+Your code should look something similar to this:
 
 ```
-http://localhost:18888/
+const last_visited_lesson_8_page = localStorage.getItem("last-visited-lesson-8-page");
 ```
 
-************************
-***Estimated Time***
-************************
-
-Estimated time for this enhancement is 1 hour.
-
-************************
-***Hints and Solution***
-************************
-
-If you need a hint or want to see a possible solution, navigate to this document [here](/Hints-And-Solution.md)
-
-************************
-***Coding Challenge***
-************************
-
-The real codebase uses a submodule that is located at online-go.com, which includes another submodule at online-go.com/submodules/goban. To ensure nothing breaks when those submodules are updated, the code has been manually added. The main online-go.com submodule can be found at https://github.com/online-go/online-go.com
-
-For lesson 8 only, we need to make sure the user is navigated to the last page they were on, when navigating from the "/learn-to-play" page.
-
-**********************
-**Requirements**
-**********************
-
-1. If a user changes pages within lesson 8, then navigates out of lesson 8, then navigates back to lesson 8 from the "/learn-to-play" page, they return to the last page they were on.
-2. Clicking either the 8 or the problems text below the 8 from the "/learn-to-play" page navigates the user properly to the last page they were on
-
-For example, if the user is originally on this page: 
-
 ```
-/learn-to-play/8/problems/capturing/1
+else if (chapter === 8 && last_visited_lesson_8_page != null) {
+    navigate(last_visited_lesson_8_page);
+}
 ```
 
-then navigates to this page by clicking endgame from the left navigation: 
+*******************
+***Conclusion***
+*******************
 
-```
-/learn-to-play/8/problems/endgame/1
-```
+Using local storage to store the user's last visited page is a common approach, although it won't work if a user changes devices.  Store the last visited page in the database is an option, but it's often overkill.  When I initially coded this enhancement out, I was a bit worried the useEffect might fire too many times, but it's only firing once on mount, and again after each time the url changes within lesson 8.  
 
-then hits the back arrow in the top left to go to the "/learn-to-play" page, and clicks to go back to lesson 8, they will be shown this page: 
-
-```
-/learn-to-play/8/problems/endgame/1
-```
-
-This was a real enhancement request from a real production codebase!  Feel free to use any resources you want on this coding challenge, have fun!  
-
-![lesson 8 navigation screenshot from learn to play page](https://res.cloudinary.com/dxq77puhi/image/upload/v1749876458/learn_to_play_page_excalidraw_annotation_for_lesson_8_navigation_enhancement_6_13_2025_q19grj.png)

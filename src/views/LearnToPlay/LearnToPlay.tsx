@@ -128,8 +128,12 @@ export function LearnToPlay(): JSX.Element {
 }
 
 function navigateToChapter(chapter: number, navigate) {
+    const last_visited_lesson_8_page = localStorage.getItem("last-visited-lesson-8-page");
+
     if (chapter < 8) {
         navigate(`/learn-to-play/${chapter}`);
+    } else if (chapter === 8 && last_visited_lesson_8_page != null) {
+        navigate(last_visited_lesson_8_page);
     } else if (chapter === 8) {
         navigate(`/learn-to-play/8/problems/capturing/1`);
     }
@@ -137,13 +141,14 @@ function navigateToChapter(chapter: number, navigate) {
 
 export function ChapterButton({ chapter }: { chapter: number }): JSX.Element {
     const navigate = useNavigate();
+    const last_visited_lesson_8_page = localStorage.getItem("last-visited-lesson-8-page");
 
     return (
         <span
             className={"ChapterButton" + ` chapter-${chapter}`}
             onClick={() => {
-                if (chapter > 8) {
-                    return;
+                if (chapter === 8 && last_visited_lesson_8_page != null) {
+                    void navigate(last_visited_lesson_8_page);
                 } else if (chapter === 8) {
                     void navigate(`/learn-to-play/8/problems/capturing/1`);
                 } else {
