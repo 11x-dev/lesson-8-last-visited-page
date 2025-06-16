@@ -1,5 +1,5 @@
 *******************
-***Hint***
+**Hint**
 *******************
 
 1. You'll likely need to add code to the following files:
@@ -16,4 +16,4 @@ For adding logic regarding url changes:
 src/views/Lessons/Puzzles.tsx
 ```
 
-2. You will want to use local storage to store the last visited lesson 8 page for the user, then you'll need to figure out a way to keep track of the url changes so you can update the local storage value
+2. You will want to use local storage to store the last visited lesson 8 page for the user.  And you will have to think of a way to keep track of the url changes so you can update the local storage value. 
