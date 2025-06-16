@@ -1,5 +1,5 @@
 *******************
-***Initial Setup***
+**Initial Setup**
 *******************
 
 Getting setup locally only takes a few minutes!
@@ -29,19 +29,19 @@ http://localhost:18888/
 ```
 
 ************************
-***Estimated Time***
+**Estimated Time**
 ************************
 
 Estimated time for this enhancement is 1 hour.
 
 ************************
-***Hints and Solution***
+**Hints and Solution**
 ************************
 
 If you need a hint or want to see a possible solution, navigate to this document [here](/Hints-And-Solution.md)
 
 ************************
-***Coding Challenge***
+**Coding Challenge**
 ************************
 
 The real codebase uses a submodule that is located at online-go.com, which includes another submodule at online-go.com/submodules/goban. To ensure nothing breaks when those submodules are updated, the code has been manually added. The main online-go.com submodule can be found at https://github.com/online-go/online-go.com
