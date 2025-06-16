@@ -1,10 +1,10 @@
 *******************
-***Solution***
+**Solution**
 *******************
 
 You can view the exact code changes needed to solve this coding challenge here: https://github.com/ScriabinOp8No12/lesson-8-last-visited-page-11xdev/pull/1/files#diff-b1d807d78a9570aab1a6460c61463ac56400bd81c156e08d151f459a4af411e6
 
-This branch contains the lesson 8 last visited page enhancement - you can test that the functionality works as intended in your browser.   
+This branch contains the lesson 8 last visited page enhancement code changes - you can test that the functionality works as intended in your browser.   
 
 1. We'll want to use local storage for storing the last visited lesson 8 page the user was on.  We can use React's useEffect and useLocation to track changes in the url.
 
@@ -45,7 +45,7 @@ else if (chapter === 8 && last_visited_lesson_8_page != null) {
 ```
 
 *******************
-***Conclusion***
+**Conclusion**
 *******************
 
 Using local storage to store the user's last visited page is a common approach, although this enhancement won't work if a user changes devices.  Storing the last visited page in the database is an option, but it's often overkill.  When I initially worked on this enhancement, I was a bit worried that the useEffect would fire too many times, but it's only firing once on mount, and again after each time the url changes within lesson 8.  
