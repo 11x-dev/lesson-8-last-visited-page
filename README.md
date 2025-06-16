@@ -4,7 +4,7 @@
 
 Getting setup locally only takes a few minutes!
 
-1. Clone the repo
+1. Open a terminal and clone the repo:
 
 ```
 git clone https://github.com/ScriabinOp8No12/lesson-8-last-visited-page-11xdev.git
@@ -16,13 +16,19 @@ git clone https://github.com/ScriabinOp8No12/lesson-8-last-visited-page-11xdev.g
 cd lesson-8-last-visited-page-11xdev
 ```
 
-3. Install packages and start the frontend server:
+3. Open the project in your IDE, then return to your original terminal for step 4:
+
+```
+code .
+```
+
+4. Install packages and start the frontend server:
 
 ```
 yarn install && npm run dev
 ```
 
-4. View the website in your browser
+5. View the website in your browser:
 
 ```
 http://localhost:18888/
