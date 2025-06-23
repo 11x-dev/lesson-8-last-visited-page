@@ -7,13 +7,13 @@ Getting setup locally only takes a few minutes!
 1. Open a terminal and clone the repo:
 
 ```
-git clone https://github.com/ScriabinOp8No12/lesson-8-last-visited-page-11xdev.git
+git clone https://github.com/ScriabinOp8No12/lesson-8-last-visited-page.git
 ```
 
 2. Navigate to the root of the project:
 
 ```
-cd lesson-8-last-visited-page-11xdev
+cd lesson-8-last-visited-page
 ```
 
 3. Open the project in your IDE, then return to your original terminal for step 4:
