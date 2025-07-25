@@ -2,7 +2,13 @@
 **Initial Setup**
 *******************
 
-Getting setup locally only takes a few minutes!
+Getting setup locally takes less than 5 minutes!
+
+Requirements:
+- Node.js version 20+ (check with: node -v)
+- Yarn package manager (install with: npm install -g yarn)
+
+*******************
 
 1. Open a terminal and clone the repo:
 
