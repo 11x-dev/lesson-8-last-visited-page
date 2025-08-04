@@ -19,7 +19,7 @@ import * as React from "react";
 import { useResizeDetector } from "react-resize-detector";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Content } from "./Content";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { _ } from "@/lib/translate";
 import { decodeMoves, Goban, GobanCanvas, GobanConfig, prettyCoordinates } from "goban";
 import { Racoon } from "@kidsgo/components/Racoon";
@@ -43,6 +43,14 @@ export function Puzzles({
 }): JSX.Element {
     const navigate = useNavigate();
     setContentNavigate(useNavigate());
+
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.pathname.startsWith("/learn-to-play/8/problems/")) {
+            localStorage.setItem("last-visited-lesson-8-page", location.pathname);
+        }
+    }, [location.pathname]);
 
     const currentSectionIndex = sectionKeys.findIndex(
         (key) => key.toLowerCase() === sectionName.toLowerCase(),
